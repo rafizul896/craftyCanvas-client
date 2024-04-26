@@ -36,10 +36,10 @@ const Navbar = () => {
             })
     }
     const links = <>
-        <NavLink>Home</NavLink>
-        <NavLink>All Art & craft Items</NavLink>
-        <NavLink>Add Craft Item</NavLink>
-        <NavLink>My Art&Craft List</NavLink>
+        <NavLink to="/"  className={({ isActive }) => isActive ? "text-red-400" : "text-black"}>Home</NavLink>
+        <NavLink to="/allCraftItems"  className={({ isActive }) => isActive ? "text-red-400" : "text-black"}>All Art & craft Items</NavLink>
+        <NavLink to="/addCraftItem"  className={({ isActive }) => isActive ? "text-red-400" : "text-black"}>Add Craft Item</NavLink>
+        <NavLink to="/myArtCraft"  className={({ isActive }) => isActive ? "text-red-400" : "text-black"}>My Art&Craft List</NavLink>
     </>
     return (
         <div className="navbar bg-base-100 px-0">
@@ -50,7 +50,7 @@ const Navbar = () => {
                             open ? <IoClose /> : <FiMenu />
                         }
                     </div>
-                    <ul className={`${open ? 'block' : 'hidden'} absolute menu menu-md dropdown-content mt-3 z-[1] p-2 shadow bg-base-300 rounded-box w-[200px] h-[200px] flex gap-5 text-center items-center justify-center`}>
+                    <ul className={`${open ? 'block' : 'hidden'} absolute menu menu-md dropdown-content mt-3 z-[1] p-2 shadow bg-base-300 rounded-box w-[200px] h-[200p] flex gap-5 text-center items-center justify-center`}>
                         {links}
                     </ul>
                 </div>

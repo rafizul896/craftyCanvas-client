@@ -4,6 +4,9 @@ import ErrorPage from "../pages/ErrorPage";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
+import AllCraftItems from "../pages/requirePages/AllCraftItems";
+import AddCraftItem from "../pages/requirePages/AddCraftItem";
+import MyArtCraft from "../pages/requirePages/MyArtCraft";
 
 const routes = createBrowserRouter([
     {
@@ -22,6 +25,18 @@ const routes = createBrowserRouter([
             {
                 path: "/register",
                 element: <Register></Register>
+            },
+            {
+                path: "/allCraftItems",
+                element: <AllCraftItems></AllCraftItems>
+            },
+            {
+                path: "/addCraftItem",
+                element: <AddCraftItem></AddCraftItem>
+            },
+            {
+                path: "/myArtCraft",
+                element: <MyArtCraft></MyArtCraft>
             }
         ]
     }
