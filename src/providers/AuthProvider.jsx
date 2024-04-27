@@ -25,6 +25,7 @@ const AuthProvider = ({ children }) => {
         setLoading(true)
         return signInWithPopup(auth, googleProvider)
     }
+
     const facebookLogin = () => {
         setLoading(true)
         return signInWithPopup(auth, faceBookProvider)
@@ -43,6 +44,16 @@ const AuthProvider = ({ children }) => {
         })
     }
 
+    useEffect(() => {
+        const unSubscribe = onAuthStateChanged(auth, currentUser => {
+            setUser(currentUser);
+            setLoading(false);
+        })
+        return () => {
+            return unSubscribe();
+        }
+    }, [])
+
     const authInfo = {
         user,
         loading,
@@ -53,16 +64,6 @@ const AuthProvider = ({ children }) => {
         updateUserProfile,
         logOut
     }
-
-    useEffect(() => {
-        const unSubscribe = onAuthStateChanged(auth, currentUser => {
-            setUser(currentUser);
-            setLoading(false);
-        })
-        return () => {
-            return unSubscribe();
-        }
-    }, [])
 
     return (
         <AuthContext.Provider value={authInfo}>

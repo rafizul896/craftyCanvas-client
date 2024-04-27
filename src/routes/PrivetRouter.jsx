@@ -6,9 +6,13 @@ import PropTypes from 'prop-types';
 
 const PrivetRouter = ({ children }) => {
     const { user, loading } = useContext(AuthContext);
-
     if (loading) {
-        return <span className="loading loading-infinity loading-lg"></span>
+        return (
+            <div className="text-center">
+                <span className="loading loading-bars loading-lg"></span>
+                {/* <span className="loading loading-infinity loading-lg"></span> */}
+            </div>
+        )
     }
     if (user) {
         return children;

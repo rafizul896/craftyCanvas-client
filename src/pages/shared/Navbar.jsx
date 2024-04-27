@@ -50,7 +50,7 @@ const Navbar = () => {
                             open ? <IoClose /> : <FiMenu />
                         }
                     </div>
-                    <ul className={`${open ? 'block' : 'hidden'} absolute menu menu-md dropdown-content mt-3 z-[1] p-2 shadow bg-base-300 rounded-box w-[200px] h-[200p] flex gap-5 text-center items-center justify-center`}>
+                    <ul className={`${open ? 'block' : 'hidden'} absolute menu menu-md dropdown-content mt-3 z-[5] p-2 shadow bg-base-300 rounded-box w-[200px] h-[200p] flex gap-5 text-center items-center justify-center`}>
                         {links}
                     </ul>
                 </div>

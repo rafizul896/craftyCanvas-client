@@ -1,7 +1,15 @@
+import Banner from "./Banner";
+import CraftItemsSection from "./requirePages/CraftItemsSection";
+
 const Home = () => {
     return (
         <div>
-            Home
+            <div>
+                <Banner></Banner>
+            </div>
+            <div className="py-10">
+                <CraftItemsSection></CraftItemsSection>
+            </div>
         </div>
     );
 };
