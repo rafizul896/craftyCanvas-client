@@ -79,7 +79,7 @@ const AddCraftItem = () => {
                                 <label className="label">
                                     <span className="label-text text-xl font-medium">Item_name</span>
                                 </label>
-                                <select name="item_name" className="select select-bordered w-full ">
+                                <select name="item_name" className="select select-bordered w-full">
                                     <option>Landscape Painting</option>
                                     <option>Portrait Drawing</option>
                                     <option>Watercolour Painting</option>
@@ -103,7 +103,7 @@ const AddCraftItem = () => {
                                 <label className="label">
                                     <span className="label-text text-xl font-medium">Customization</span>
                                 </label>
-                                <select name="customization" className="select select-bordered w-full">
+                                <select name="customization" className="select select-bordered w-full max-w-xs">
                                     <option>yes</option>
                                     <option>no</option>
                                 </select>
@@ -112,13 +112,11 @@ const AddCraftItem = () => {
                                 <label className="label">
                                     <span className="label-text text-xl font-medium">StockStatus</span>
                                 </label>
-                                <select name="stockStatus" className="select select-bordered w-full">
+                                <select name="stockStatus" className="select select-bordered w-full max-w-xs">
                                     <option>In stock</option>
                                     <option>Made to Order</option>
                                 </select>
                             </div>
-
-
                         </div>
                         {/* row-4 */}
                         <div className="flex flex-col md:flex-row gap-3 md:gap-4 lg:gap-6">

@@ -9,6 +9,7 @@ import AddCraftItem from "../pages/requirePages/AddCraftItem";
 import MyArtCraft from "../pages/requirePages/MyArtCraft";
 import PrivetRouter from "./PrivetRouter";
 import CraftViewDetailsPage from "../pages/requirePages/CraftViewDetailsPage";
+import UpdateArtCraft from "../pages/updatePage/UpdateArtCraft";
 
 const routes = createBrowserRouter([
     {
@@ -41,14 +42,21 @@ const routes = createBrowserRouter([
                 </PrivetRouter>
             },
             {
-                path: "/myArtCraft/:email",
+                path: "/myArtCrafts/:email",
                 element: <PrivetRouter>
                     <MyArtCraft></MyArtCraft>
                 </PrivetRouter>,
                 loader: ({params})=>fetch(`http://localhost:5000/myCraftItems/${params.email}`)
             },
             {
-                path: '/allCraftItems/:id',
+                path: "/myCraftItems/:email/:id",
+                element: <PrivetRouter>
+                    <UpdateArtCraft></UpdateArtCraft>
+                </PrivetRouter>,
+                loader: ({params})=>fetch(`http://localhost:5000/myCraftItems/${params.email}/${params.id}`)
+            },
+            {
+                path: '/craftDetailsPage/:id',
                 element: <PrivetRouter>
                     <CraftViewDetailsPage></CraftViewDetailsPage>
                 </PrivetRouter>,

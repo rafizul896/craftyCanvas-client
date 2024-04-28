@@ -12,7 +12,7 @@ const CraftItemCart = ({ craftItem }) => {
             <div className="py-4 space-y-2">
                 <h3 className="text-xl font-medium">{item_name}</h3>
                 <p>{short_description.slice(0, 120)}...</p>
-                <Link to={`/allCraftItems/${_id}`}>
+                <Link to={`/craftDetailsPage/${_id}`}>
                     <button className="mt-4 btn btn-secondary w-full rounded-full">View Details”</button>
                 </Link>
             </div>
