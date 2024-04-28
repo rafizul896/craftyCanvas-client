@@ -54,6 +54,7 @@ const CraftViewDetailsPage = () => {
                     <button className="btn btn-secondary rounded-full w-full">Add to Cart</button>
                     <button className="btn btn-secondary rounded-full w-full"> <span className="text-xl"><IoIosHeartEmpty /></span> Add to my favorites</button>
                 </div>
+                
             </div>
         </div>
     );

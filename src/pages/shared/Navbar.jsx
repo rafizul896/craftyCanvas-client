@@ -39,7 +39,7 @@ const Navbar = () => {
         <NavLink to="/"  className={({ isActive }) => isActive ? "text-red-400" : "text-black"}>Home</NavLink>
         <NavLink to="/allCraftItems"  className={({ isActive }) => isActive ? "text-red-400" : "text-black"}>All Art & craft Items</NavLink>
         <NavLink to="/addCraftItem"  className={({ isActive }) => isActive ? "text-red-400" : "text-black"}>Add Craft Item</NavLink>
-        <NavLink to="/myArtCraft"  className={({ isActive }) => isActive ? "text-red-400" : "text-black"}>My Art&Craft List</NavLink>
+        <NavLink to={`/myArtCraft/${user?.email}`}  className={({ isActive }) => isActive ? "text-red-400" : "text-black"}>My Art&Craft List</NavLink>
     </>
     return (
         <div className="navbar bg-base-100 px-0">

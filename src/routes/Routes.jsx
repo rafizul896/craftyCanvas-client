@@ -19,7 +19,7 @@ const routes = createBrowserRouter([
             {
                 path: "/",
                 element: <Home></Home>,
-                loader: () => fetch('http://localhost:5000/craftItmes')
+                loader: () => fetch('http://localhost:5000/craftItems')
             },
             {
                 path: "/login",
@@ -32,7 +32,7 @@ const routes = createBrowserRouter([
             {
                 path: "/allCraftItems",
                 element: <AllCraftItems></AllCraftItems>,
-                loader: () => fetch('http://localhost:5000/craftItmes')
+                loader: () => fetch('http://localhost:5000/craftItems')
             },
             {
                 path: "/addCraftItem",
@@ -41,15 +41,18 @@ const routes = createBrowserRouter([
                 </PrivetRouter>
             },
             {
-                path: "/myArtCraft",
-                element: <MyArtCraft></MyArtCraft>
+                path: "/myArtCraft/:email",
+                element: <PrivetRouter>
+                    <MyArtCraft></MyArtCraft>
+                </PrivetRouter>,
+                loader: ({params})=>fetch(`http://localhost:5000/myCraftItems/${params.email}`)
             },
             {
                 path: '/allCraftItems/:id',
                 element: <PrivetRouter>
                     <CraftViewDetailsPage></CraftViewDetailsPage>
                 </PrivetRouter>,
-                loader: ({params}) => fetch(`http://localhost:5000/craftItmes/${params.id}`)
+                loader: ({params}) => fetch(`http://localhost:5000/craftItems/${params.id}`)
             }
         ]
     }

@@ -2,10 +2,9 @@ import { Link, useLoaderData } from "react-router-dom";
 
 const AllCraftItems = () => {
     const loadedCraftItems = useLoaderData();
-    const { user_name, item_name, subcategory_Name, stockStatus, customization, processing_time, short_description, price, rating, image } = loadedCraftItems;
-
+    
     return (
-        <div className="overflow-x-auto">
+        <div className="overflow-x-auto py-10">
             <table className="table table-sm">
                 <thead>
                     <tr>
@@ -20,7 +19,7 @@ const AllCraftItems = () => {
                 </thead>
                 {
                     loadedCraftItems.map((item, indx) => <tbody key={item._id}>
-                        <tr>
+                        <tr className="hover border-b border-[#e6dede]">
                             <th>{indx + 1}</th>
                             <td>{item.item_name}</td>
                             <td>{item.subcategory_Name}</td>
@@ -29,7 +28,7 @@ const AllCraftItems = () => {
                             <td>${item.price}</td>
                             <td>
                                 <Link to={`/allCraftItems/${item._id}`}>
-                                    <button className="mt-4 px-3 py-2 border w-full rounded-full">View Details”</button>
+                                    <button className="mt-4 px-3 py-2 border w-full rounded-full">View Details</button>
                                 </Link>
                             </td>
                         </tr>
