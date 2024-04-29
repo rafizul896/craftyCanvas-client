@@ -5,7 +5,7 @@ import { AuthContext } from "../../providers/AuthProvider";
 const AddCraftItem = () => {
     const { user } = useContext(AuthContext);
     const { displayName, email } = user;
-    
+
     const handleAddCoffee = event => {
         event.preventDefault()
         const form = event.target;
@@ -23,7 +23,7 @@ const AddCraftItem = () => {
         const newCraftItmes = { user_name, user_email, item_name, subcategory_Name, stockStatus, customization, processing_time, short_description, price, rating, image }
         console.log(newCraftItmes)
 
-        fetch('http://localhost:5000/craftItmes', {
+        fetch('http://localhost:5000/craftItems', {
             method: "POST",
             headers: {
                 "content-type": "application/json"
@@ -36,9 +36,9 @@ const AddCraftItem = () => {
                 if (data.insertedId) {
                     Swal.fire({
                         title: 'Success',
-                        text: 'User Added Successfully',
+                        text: 'New Craft Itmes Added Successfully',
                         icon: 'success',
-                        confirmButtonText: 'Cool'
+                        confirmButtonText: 'Done'
                     })
                     form.reset()
                 }
@@ -79,7 +79,15 @@ const AddCraftItem = () => {
                                 <label className="label">
                                     <span className="label-text text-xl font-medium">Item_name</span>
                                 </label>
-                                <select name="item_name" className="select select-bordered w-full">
+                                <label className="input-group">
+                                    <input type="text" name="item_name" placeholder="Enter Item_name" className="input input-bordered w-full border-0" />
+                                </label>
+                            </div>
+                            <div className="form-control w-full pb-2">
+                                <label className="label">
+                                    <span className="label-text text-xl font-medium">Subcategory_Name</span>
+                                </label>
+                                <select name="subcategory_Name" className="select select-bordered w-full">
                                     <option>Landscape Painting</option>
                                     <option>Portrait Drawing</option>
                                     <option>Watercolour Painting</option>
@@ -88,14 +96,7 @@ const AddCraftItem = () => {
                                     <option>Cartoon Drawing</option>
                                 </select>
                             </div>
-                            <div className="form-control w-full pb-2">
-                                <label className="label">
-                                    <span className="label-text text-xl font-medium">Subcategory_Name</span>
-                                </label>
-                                <label className="input-group">
-                                    <input type="text" name="subcategory_Name" placeholder="Enter subcategory_Name" className="input input-bordered w-full border-0" />
-                                </label>
-                            </div>
+
                         </div>
                         {/* row-3 */}
                         <div className="flex flex-col md:flex-row gap-3 md:gap-4 lg:gap-6">

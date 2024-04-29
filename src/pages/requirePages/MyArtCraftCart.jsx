@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
 import Swal from 'sweetalert2';
 
-const MyArtCraftCart = ({ myCraftItem }) => {
+const MyArtCraftCart = ({ myCraftItem, myCraftItems, setMyCraftItems }) => {
     const { user } = useContext(AuthContext);
     const { _id, item_name, stockStatus, customization, price, rating, image } = myCraftItem;
 
@@ -23,7 +23,7 @@ const MyArtCraftCart = ({ myCraftItem }) => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/myCraftItems/${user?.email}/${_id}`,{
+                fetch(`http://localhost:5000/myCraftItems/${user?.email}/${_id}`, {
                     method: "DELETE"
                 })
                 Swal.fire({
@@ -31,6 +31,8 @@ const MyArtCraftCart = ({ myCraftItem }) => {
                     text: "Your file has been deleted.",
                     icon: "success"
                 });
+                const current = myCraftItems.filter(item => item._id !== _id);
+                setMyCraftItems(current)
             }
         });
     }
@@ -70,7 +72,9 @@ const MyArtCraftCart = ({ myCraftItem }) => {
 };
 
 MyArtCraftCart.propTypes = {
-    myCraftItem: PropTypes.object
+    myCraftItem: PropTypes.object,
+    myCraftItems: PropTypes.array,
+    setMyCraftItems: PropTypes.func
 }
 
 export default MyArtCraftCart;

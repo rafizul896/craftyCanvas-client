@@ -10,6 +10,7 @@ import MyArtCraft from "../pages/requirePages/MyArtCraft";
 import PrivetRouter from "./PrivetRouter";
 import CraftViewDetailsPage from "../pages/requirePages/CraftViewDetailsPage";
 import UpdateArtCraft from "../pages/updatePage/UpdateArtCraft";
+import SubCategories from "../pages/challengesPages/SubCategories";
 
 const routes = createBrowserRouter([
     {
@@ -61,6 +62,11 @@ const routes = createBrowserRouter([
                     <CraftViewDetailsPage></CraftViewDetailsPage>
                 </PrivetRouter>,
                 loader: ({params}) => fetch(`http://localhost:5000/craftItems/${params.id}`)
+            },
+            {
+                path: "/allSubcategorys/:id",
+                element: <SubCategories></SubCategories>,
+                loader: ({params}) => fetch(`http://localhost:5000/subCategories/${params.id}`)
             }
         ]
     }

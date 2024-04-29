@@ -60,7 +60,15 @@ const UpdateArtCraft = () => {
                                 <label className="label">
                                     <span className="label-text text-xl font-medium">Item_name</span>
                                 </label>
-                                <select name="item_name" defaultValue={item_name} className="select select-bordered w-full ">
+                                <label className="input-group">
+                                    <input type="text" name="item_name" defaultValue={item_name} placeholder="Enter Item_name" className="input input-bordered w-full border-0" />
+                                </label>
+                            </div>
+                            <div className="form-control w-full pb-2">
+                                <label className="label">
+                                    <span className="label-text text-xl font-medium">Subcategory_Name</span>
+                                </label>
+                                <select name="subcategory_Name" defaultValue={subcategory_Name} className="select select-bordered w-full ">
                                     <option>Landscape Painting</option>
                                     <option>Portrait Drawing</option>
                                     <option>Watercolour Painting</option>
@@ -68,14 +76,6 @@ const UpdateArtCraft = () => {
                                     <option>Charcoal Sketching</option>
                                     <option>Cartoon Drawing</option>
                                 </select>
-                            </div>
-                            <div className="form-control w-full pb-2">
-                                <label className="label">
-                                    <span className="label-text text-xl font-medium">Subcategory_Name</span>
-                                </label>
-                                <label className="input-group">
-                                    <input type="text" name="subcategory_Name" defaultValue={subcategory_Name} placeholder="Enter subcategory_Name" className="input input-bordered w-full border-0" />
-                                </label>
                             </div>
                         </div>
                         {/* row-2 */}
