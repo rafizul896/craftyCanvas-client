@@ -29,13 +29,13 @@ const CraftViewDetailsPage = () => {
             <div className="lg:flex-1 space-y-5">
                 <h3 className="font-bold text-2xl">{item_name}</h3>
                 <div className="flex items-center gap-3 font-semibold">
-                    <IoPricetagsOutline className="text-[#ff00d3]"/>
+                    <IoPricetagsOutline className="text-[#14a55f]"/>
                     <p>
                         {subcategory_Name}
                     </p>
                 </div>
                 <div className="flex items-center gap-3">
-                    <TfiWrite className="text-[#ff00d3]"/>
+                    <TfiWrite className="text-[#14a55f]"/>
                     <p className="font-semibold">
                         By {user_name}
                     </p>
@@ -61,8 +61,8 @@ const CraftViewDetailsPage = () => {
                     {rating} <span>rating</span>
                 </div>
                 <div className="flex flex-col gap-3">
-                    <button className="btn btn-secondary rounded-full w-full">Add to Cart</button>
-                    <button className="btn hover:btn-secondary border border-[#ff00d3] bg-white text-black rounded-full w-full"> <span className="text-xl"><IoIosHeartEmpty /></span> Add to my favorites</button>
+                    <button className="btn bg-[#14a55f] hover:bg-[#0fbb68] rounded-full w-full">Add to Cart</button>
+                    <button className="btn hover:bg-[#14a55f] text-white border border-[#14a55f] bg-white rounded-full w-full"> <span className="text-xl"><IoIosHeartEmpty /></span> Add to my favorites</button>
                 </div>
                 
             </div>
