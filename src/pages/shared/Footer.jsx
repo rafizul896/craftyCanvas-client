@@ -8,10 +8,11 @@ const Footer = () => {
                 <div className="lg:w-1/3">
                     <a rel="noopener noreferrer" className="flex justify-center space-x-3 lg:justify-start">
                         <h1 className="text-3xl md:text-4xl font-semibold" style={{ paddingTop: '1rem', }}>
-                            <span style={{ color: 'red', fontWeight: 'bold' }}>
+                            <span style={{ color: '#ff00d3', fontWeight: 'bold' }}>
                                 {/* Style will be inherited from the parent element */}
+                                Crafty
                                 <Typewriter
-                                    words={['CraftyCanvas']}
+                                    words={['Canvas']}
                                     loop={false}
                                     cursor={false}
                                     cursorStyle='_'

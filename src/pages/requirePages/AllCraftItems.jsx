@@ -1,9 +1,13 @@
+import { useContext } from "react";
 import { Helmet } from "react-helmet";
 import { Link, useLoaderData } from "react-router-dom";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const AllCraftItems = () => {
+    const {setLoading} = useContext(AuthContext)
+    setLoading(true)
     const loadedCraftItems = useLoaderData();
-    
+    setLoading(false)
     return (
         <div className="overflow-x-auto py-10">
             <Helmet>

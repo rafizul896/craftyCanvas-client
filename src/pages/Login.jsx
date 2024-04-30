@@ -24,12 +24,14 @@ const Login = () => {
             .then(result => {
                 navigate(location?.state ? location.state : "/")
                 toast.success("Login Success", {
+                    position: "top-center",
                     theme: "colored",
                 });
                 console.log(result);
             })
             .catch(error => {
                 toast.error("Invalid email or password!", {
+                    position: "top-center",
                     theme: "colored",
                 });
                 console.log(error)

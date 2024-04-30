@@ -4,8 +4,7 @@ import CraftItemCart from "./CraftItemCart";
 const CraftItemsSection = () => {
     const loadedCraftItems = useLoaderData();
     const craftItems = loadedCraftItems.slice(0,6);
-    console.log(craftItems)
-
+    
     return (
         <div>
             <div>

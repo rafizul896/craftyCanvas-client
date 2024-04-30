@@ -9,7 +9,7 @@ const ArtAndCraftCategories = () => {
             .then(res => res.json())
             .then(data => setartCraftCategories(data))
     }, [])
-    console.log(artCraftCategories)
+    
     return (
         <div>
             <h1 className="text-2xl md:text-4xl text-center font-semibold py-10" style={{ paddingTop: '1rem',  }}>

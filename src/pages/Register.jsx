@@ -41,11 +41,13 @@ const Register = () => {
                         navigate()
                     })
                 toast.success("Registration Success", {
+                    position: "top-center",
                     theme: "colored",
                 });
             })
             .catch(error => {
                 toast.error('Registration Invalid!', {
+                    position: "top-center",
                     theme: "colored",
                 });
                 console.log(error)

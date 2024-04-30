@@ -10,7 +10,7 @@ const Home = () => {
             <Helmet>
                 <title>CraftyCanvas | Home</title>
             </Helmet>
-            <div>
+            <div className="py-5">
                 <Banner></Banner>
             </div>
             <div className="py-10">
