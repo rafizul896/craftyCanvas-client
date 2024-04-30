@@ -23,7 +23,7 @@ const MyArtCraftCart = ({ myCraftItem, myCraftItems, setMyCraftItems }) => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/myCraftItems/${user?.email}/${_id}`, {
+                fetch(`https://assignment-ten-server-six-eta.vercel.app/myCraftItems/${user?.email}/${_id}`, {
                     method: "DELETE"
                 })
                 Swal.fire({

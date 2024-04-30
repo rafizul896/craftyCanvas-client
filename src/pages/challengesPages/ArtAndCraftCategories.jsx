@@ -5,7 +5,7 @@ import { Typewriter } from "react-simple-typewriter";
 const ArtAndCraftCategories = () => {
     const [artCraftCategories, setartCraftCategories] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/artCraftCategories')
+        fetch('https://assignment-ten-server-six-eta.vercel.app/artCraftCategories')
             .then(res => res.json())
             .then(data => setartCraftCategories(data))
     }, [])

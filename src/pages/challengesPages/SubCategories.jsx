@@ -7,7 +7,7 @@ const SubCategories = () => {
     const [craftItems, SetCraftItems] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/craftItems')
+        fetch('https://assignment-ten-server-six-eta.vercel.app/craftItems')
             .then(res => res.json())
             .then(data => SetCraftItems(data))
     }, [])

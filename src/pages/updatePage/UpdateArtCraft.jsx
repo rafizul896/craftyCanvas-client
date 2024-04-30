@@ -23,7 +23,7 @@ const UpdateArtCraft = () => {
         const updateCraftItem = { item_name, subcategory_Name, stockStatus, customization, processing_time, short_description, price, rating, image }
         console.log(updateCraftItem)
 
-        fetch(`http://localhost:5000/myCraftItems/${user?.email}/${_id}`, {
+        fetch(`https://assignment-ten-server-six-eta.vercel.app/myCraftItems/${user?.email}/${_id}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json"

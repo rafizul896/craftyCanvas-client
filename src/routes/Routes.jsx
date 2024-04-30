@@ -21,7 +21,7 @@ const routes = createBrowserRouter([
             {
                 path: "/",
                 element: <Home></Home>,
-                loader: () => fetch('http://localhost:5000/craftItems')
+                loader: () => fetch('https://assignment-ten-server-six-eta.vercel.app/craftItems')
             },
             {
                 path: "/login",
@@ -34,7 +34,7 @@ const routes = createBrowserRouter([
             {
                 path: "/allCraftItems",
                 element: <AllCraftItems></AllCraftItems>,
-                loader: () => fetch('http://localhost:5000/craftItems')
+                loader: () => fetch('https://assignment-ten-server-six-eta.vercel.app/craftItems')
             },
             {
                 path: "/addCraftItem",
@@ -47,26 +47,26 @@ const routes = createBrowserRouter([
                 element: <PrivetRouter>
                     <MyArtCraft></MyArtCraft>
                 </PrivetRouter>,
-                loader: ({params})=>fetch(`http://localhost:5000/myCraftItems/${params.email}`)
+                loader: ({params})=>fetch(`https://assignment-ten-server-six-eta.vercel.app/myCraftItems/${params.email}`)
             },
             {
                 path: "/myCraftItems/:email/:id",
                 element: <PrivetRouter>
                     <UpdateArtCraft></UpdateArtCraft>
                 </PrivetRouter>,
-                loader: ({params})=>fetch(`http://localhost:5000/myCraftItems/${params.email}/${params.id}`)
+                loader: ({params})=>fetch(`https://assignment-ten-server-six-eta.vercel.app/myCraftItems/${params.email}/${params.id}`)
             },
             {
                 path: '/craftDetailsPage/:id',
                 element: <PrivetRouter>
                     <CraftViewDetailsPage></CraftViewDetailsPage>
                 </PrivetRouter>,
-                loader: ({params}) => fetch(`http://localhost:5000/craftItems/${params.id}`)
+                loader: ({params}) => fetch(`https://assignment-ten-server-six-eta.vercel.app/craftItems/${params.id}`)
             },
             {
                 path: "/allSubcategorys/:id",
                 element: <SubCategories></SubCategories>,
-                loader: ({params}) => fetch(`http://localhost:5000/subCategories/${params.id}`)
+                loader: ({params}) => fetch(`https://assignment-ten-server-six-eta.vercel.app/subCategories/${params.id}`)
             }
         ]
     }

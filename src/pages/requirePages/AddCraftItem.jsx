@@ -23,7 +23,7 @@ const AddCraftItem = () => {
         const newCraftItmes = { user_name, user_email, item_name, subcategory_Name, stockStatus, customization, processing_time, short_description, price, rating, image }
         console.log(newCraftItmes)
 
-        fetch('http://localhost:5000/craftItems', {
+        fetch('https://assignment-ten-server-six-eta.vercel.app/craftItems', {
             method: "POST",
             headers: {
                 "content-type": "application/json"
