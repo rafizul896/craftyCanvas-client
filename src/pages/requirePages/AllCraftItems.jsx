@@ -1,13 +1,15 @@
-import { useContext } from "react";
 import { Helmet } from "react-helmet";
-import { Link, useLoaderData } from "react-router-dom";
-import { AuthContext } from "../../providers/AuthProvider";
+import { Link, useLoaderData, useNavigation } from "react-router-dom";
+import Loader from "../extra/Loader";
 
 const AllCraftItems = () => {
-    const {setLoading} = useContext(AuthContext)
-    setLoading(true)
     const loadedCraftItems = useLoaderData();
-    setLoading(false)
+    const navigation = useNavigation();
+    
+    if(navigation.state === 'loading'){
+        return <Loader></Loader>
+    }
+  
     return (
         <div className="overflow-x-auto py-10">
             <Helmet>
@@ -19,7 +21,7 @@ const AllCraftItems = () => {
                         <th></th>
                         <th>Name</th>
                         <th>subcategory_Name</th>
-                        <th>stockStatus</th>
+                        <th className="hidden lg:block">stockStatus</th>
                         <th>Rating</th>
                         <th>Price</th>
                         <th>Favorite Color</th>
@@ -28,15 +30,15 @@ const AllCraftItems = () => {
                 {
                     loadedCraftItems.map((item, indx) => <tbody key={item._id}>
                         <tr className="hover border-b border-[#e6dede]">
-                            <th>{indx + 1}</th>
+                            <th className="text-[#14a55f]">{indx + 1}</th>
                             <td>{item.item_name}</td>
                             <td>{item.subcategory_Name}</td>
-                            <td>{item.stockStatus}</td>
+                            <td className="hidden lg:block">{item.stockStatus}</td>
                             <td>{item.rating}</td>
                             <td>${item.price}</td>
                             <td>
                                 <Link to={`/craftDetailsPage/${item._id}`}>
-                                    <button className="mt-4 px-3 py-2 border w-full rounded-full">View Details</button>
+                                    <button className="mt-4 px-3 py-2 border-[#14a55f] border w-full rounded-full">View Details</button>
                                 </Link>
                             </td>
                         </tr>

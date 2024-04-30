@@ -7,8 +7,8 @@ const Footer = () => {
             <div className="container flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
                 <div className="lg:w-1/3">
                     <a rel="noopener noreferrer" className="flex justify-center space-x-3 lg:justify-start">
-                        <h1 className="text-3xl md:text-4xl font-semibold" style={{ paddingTop: '1rem', }}>
-                            <span style={{ color: '#ff00d3', fontWeight: 'bold' }}>
+                        <h1 className="text-3xl md:text-4xl font-bold  bg-gradient-to-r from-[#06914e] via-[#0ea5e9] to-[#2e845a] text-transparent bg-clip-text animate-gradient bg-300%" style={{ paddingTop: '1rem', }}>
+                            <span style={{fontWeight: 'bold' }}>
                                 {/* Style will be inherited from the parent element */}
                                 Crafty
                                 <Typewriter

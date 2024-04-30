@@ -58,7 +58,7 @@ const Register = () => {
             <Helmet>
                 <title>Register | CraftyCanvas</title>
             </Helmet>
-            <div className="hero-content md:w-1/2 flex-col border mb-10 bg-base-100 shadow md:pb-0 px-0 py-10 rounded-2xl">
+            <div className="hero-content md:w-1/2 flex-col border mb-10 bg-base-100 shadow md:pb-0 px-0 py-10 mt-2 rounded-2xl">
                 <div className="text-center lg:text-left">
                     <h1 className="text-2xl md:text-4xl font-bold">Register your account</h1>
                 </div>
@@ -114,7 +114,7 @@ const Register = () => {
                             </label>
                         </div>
                         <div className="form-control mt-6">
-                            <button type="submit" className="btn text-white hover:bg-[#5144e6] bg-[#6a60e2] rounded-full">Register</button>
+                            <button type="submit" className="btn bg-[#14a55f] hover:bg-[#0fbb68] text-white rounded-full">Register</button>
                         </div>
                         <p className="text-sm mt-2 text-center">Already Have An Account ? <Link to="/login" className="text-orange-700 font-medium">Login</Link></p>
                     </form>

@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import CategoriesCart from "./CategoriesCart";
 import { Typewriter } from "react-simple-typewriter";
+import Loader from "../extra/Loader";
+import { useNavigation } from "react-router-dom";
 
 const ArtAndCraftCategories = () => {
     const [artCraftCategories, setartCraftCategories] = useState([]);
@@ -9,12 +11,18 @@ const ArtAndCraftCategories = () => {
             .then(res => res.json())
             .then(data => setartCraftCategories(data))
     }, [])
+
+    const navigation = useNavigation();
     
+    if(navigation.state === 'loading'){
+        return <Loader></Loader>
+    }
+
     return (
         <div>
-            <h1 className="text-2xl md:text-4xl text-center font-semibold py-10" style={{ paddingTop: '1rem',  }}>
+            <h1 className="text-2xl text-center font-bold py-10  md:text-4xl" style={{ paddingTop: '1rem'}}>
                 Art & Craft{' '}
-                <span style={{ color: 'red', fontWeight: 'bold' }}>
+                <span className="text-2xl text-center font-bold py-10  md:text-4xl  bg-gradient-to-r from-[#06914e] via-[#0ea5e9] to-[#2e845a] text-transparent bg-clip-text animate-gradient bg-300%">
                     {/* Style will be inherited from the parent element */}
                     <Typewriter
                         words={['Categories']}

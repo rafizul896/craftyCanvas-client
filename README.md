@@ -12,4 +12,5 @@ characteristics of my website:
 Used npm package name:
  * React-tooltip.
  * React-simple-typewriter.
- * Swiper slider
+ * Swiper slider.
+ * REACT SPINNERS.

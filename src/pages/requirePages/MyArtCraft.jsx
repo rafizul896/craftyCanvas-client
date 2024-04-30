@@ -1,12 +1,18 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigation } from "react-router-dom";
 import MyArtCraftCart from "./MyArtCraftCart";
 import { useState } from "react";
 import { Helmet } from "react-helmet";
+import Loader from "../extra/Loader";
 
 const MyArtCraft = () => {
     const loadedmyCraftItems = useLoaderData();
+  
     const [myCraftItems, setMyCraftItems] = useState(loadedmyCraftItems)
-
+    const navigation = useNavigation();
+    
+    if(navigation.state === 'loading'){
+        return <Loader></Loader>
+    }
     const handleCraftItemsFilter = filter => {
         if (filter === 'all'){
             setMyCraftItems(loadedmyCraftItems)
@@ -20,6 +26,7 @@ const MyArtCraft = () => {
             setMyCraftItems(craftItem)
         }
     }
+    
     return (
         <div>
             <Helmet>
@@ -27,7 +34,7 @@ const MyArtCraft = () => {
             </Helmet>
             <div className="flex justify-center items-center pb-10">
                 <details className="dropdown">
-                    <summary className="m-1 p-3 rounded-lg bg-[#23BE0] border">Customization</summary>
+                    <summary className="m-1 p-3 rounded-lg bg-[#14a55f] border text-white font-medium">Customization</summary>
                     <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
                         <li onClick={()=>handleCraftItemsFilter('all')}><a>All</a></li>
                         <li onClick={()=>handleCraftItemsFilter('yes')}><a>Yes</a></li>

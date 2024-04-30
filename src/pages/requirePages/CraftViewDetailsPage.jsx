@@ -1,12 +1,18 @@
 import { IoPricetagsOutline } from "react-icons/io5";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigation } from "react-router-dom";
 import { IoIosHeartEmpty } from "react-icons/io";
 import { BiDollar } from "react-icons/bi";
 import { TfiWrite } from "react-icons/tfi";
 import { Helmet } from "react-helmet";
+import Loader from "../extra/Loader";
 
 const CraftViewDetailsPage = () => {
     const loadedCraftItem = useLoaderData();
+    const navigation = useNavigation();
+    
+    if(navigation.state === 'loading'){
+        return <Loader></Loader>
+    }
     const { user_name, item_name, subcategory_Name, stockStatus, customization, processing_time, short_description, price, rating, image } = loadedCraftItem;
 
     return (

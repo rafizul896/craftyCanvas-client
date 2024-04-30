@@ -29,7 +29,7 @@ const MyArtCraftCart = ({ myCraftItem, myCraftItems, setMyCraftItems }) => {
                 Swal.fire({
                     title: "Deleted!",
                     text: "Your file has been deleted.",
-                    icon: "success"
+                    icon: "success",
                 });
                 const current = myCraftItems.filter(item => item._id !== _id);
                 setMyCraftItems(current)
@@ -37,7 +37,7 @@ const MyArtCraftCart = ({ myCraftItem, myCraftItems, setMyCraftItems }) => {
         });
     }
     return (
-        <div className='rounded-lg p-2 md:p-5 flex flex-col items-cente justify-cente gap-3 border border-red-600'>
+        <div className='rounded-lg p-2 md:p-5 flex flex-col items-cente justify-cente gap-3 border border-[#14a55f]'>
             <div className='h-[200px] '>
                 <img className='h-full w-full object-cover' src={image} alt="" />
             </div>
@@ -62,7 +62,7 @@ const MyArtCraftCart = ({ myCraftItem, myCraftItems, setMyCraftItems }) => {
                     <p className="font-semibold">stock_status : <span className="font-normal">{stockStatus}</span></p>
                 </div>
                 <div className="flex flex-col gap-4">
-                    <Link to={`/craftDetailsPage/${_id}`}><button className="p-2 text-xl bg-[#D2B48C] text-white rounded-md"><TiEye /></button></Link>
+                    <Link to={`/craftDetailsPage/${_id}`}><button className="p-2 text-xl bg-[#14a55f] text-white rounded-md"><TiEye /></button></Link>
                     <Link to={`/myCraftItems/${user?.email}/${_id}`}><button className="p-2 text-xl bg-[#3C393B] text-white rounded-md"><MdModeEdit /></button></Link>
                     <button onClick={() => handleDelete(_id)} className="p-2 text-xl bg-[#EA4744] text-white rounded-md"><MdDelete /></button>
                 </div>

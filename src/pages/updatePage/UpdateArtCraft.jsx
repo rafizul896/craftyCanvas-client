@@ -1,12 +1,18 @@
 import { useContext } from "react";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../providers/AuthProvider";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigation } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import Loader from "../extra/Loader";
 
 const UpdateArtCraft = () => {
     const { user } = useContext(AuthContext);
     const loaded = useLoaderData();
+    const navigation = useNavigation();
+    
+    if(navigation.state === 'loading'){
+        return <Loader></Loader>
+    }
     const { _id, item_name, subcategory_Name, stockStatus, customization, processing_time, short_description, price, rating, image } = loaded;
 
     const handleUpdateArtCraft = event => {
@@ -46,15 +52,12 @@ const UpdateArtCraft = () => {
             })
     }
     return (
-        <div className="md:w-[70%] py-10 md:p-10 mx-auto my-10 bg-[#F4F3F0] rounded-md">
+        <div className="md:w-[70%] py-10 md:p-10 mx-auto my-10 border border-[#14a55f] bg-[#e5f9ef] rounded-md">
             <Helmet>
                 <title>Update Page | CraftyCanvas</title>
             </Helmet>
             <div className="text-center space-y-5">
-                <h1 className="text-4xl font-semibold text-[#314151] rancho">Update Craft Item</h1>
-                {/* <p className="raleway text-center px-2 md:px-0 lg:max-w-[70%] mx-auto">
-                    It is a long established fact that a reader will be distraceted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here.
-                </p> */}
+                <h1 className="text-4xl font-semibold">Update Craft Item</h1>
                 {/* Form */}
                 <form onSubmit={handleUpdateArtCraft}>
                     <div className="w-[90%] mx-auto md:w-[100%]">
@@ -152,7 +155,7 @@ const UpdateArtCraft = () => {
                                 </label>
                             </div>
                         </div>
-                        <button className="btn btn-block mt-6 bg-[#D2B48C] text-[#331A15] border-2 border-[#331A15] rancho text-2xl hover:bg-[#d5a566] hover:border-0">Update</button>
+                        <button className="btn btn-block mt-6 bg-[#14a55f] text-white text-2xl hover:bg-[#0fbb68] border-0">Update</button>
                     </div>
                 </form>
             </div>

@@ -37,13 +37,13 @@ const Navbar = () => {
             })
     }
     const links = <>
-        <NavLink to="/" className={({ isActive }) => isActive ? "text-red-400" : "text-black"}>Home</NavLink>
-        <NavLink to="/allCraftItems" className={({ isActive }) => isActive ? "text-red-400" : "text-black"}>All Art & craft Items</NavLink>
-        <NavLink to="/addCraftItem" className={({ isActive }) => isActive ? "text-red-400" : "text-black"}>Add Craft Item</NavLink>
-        <NavLink to={`/myArtCrafts/${user?.email}`} className={({ isActive }) => isActive ? "text-red-400" : "text-black"}>My Art&Craft List</NavLink>
+        <NavLink to="/" className={({ isActive }) => isActive ? "text-[#14a55f] text-base font-medium" : "text-base font-medium"}>Home</NavLink>
+        <NavLink to="/allCraftItems" className={({ isActive }) => isActive ? "text-[#14a55f] text-base font-medium" : "text-base font-medium"}>All Art & craft Items</NavLink>
+        <NavLink to="/addCraftItem" className={({ isActive }) => isActive ? "text-[#14a55f] text-base font-medium" : "text-base font-medium"}>Add Craft Item</NavLink>
+        <NavLink to={`/myArtCrafts/${user?.email}`} className={({ isActive }) => isActive ? "text-[#14a55f] text-base font-medium" : "text-base font-medium"}>My Art&Craft List</NavLink>
     </>
     return (
-        <div className="navbar bg-base-100 px-0 flex">
+        <div className="navbar bg-base-100 px-0 pt-4 flex">
             <div className="navbar-start gap-2">
                 <div className="dropdow">
                     <div onClick={() => setOpen(!open)} className="lg:hidden text-xl md:text-2xl">
@@ -58,9 +58,9 @@ const Navbar = () => {
                 {
                     user ?
 
-                        <a className="text-2xl md:text-3xl font-bold">CraftyCanvas</a>
+                        <a className="text-2xl md:text-4xl font-bold  bg-gradient-to-r from-[#06914e] via-[#0ea5e9] to-[#2e845a] text-transparent bg-clip-text animate-gradient bg-300%">CraftyCanvas</a>
                         :
-                        <a className="text-2xl hidden md:block md:text-3xl font-bold">CraftyCanvas</a>
+                        <a className="text-2xl hidden md:block font-bold md:text-4xl  bg-gradient-to-r from-[#06914e] via-[#0ea5e9] to-[#2e845a] text-transparent bg-clip-text animate-gradient bg-300%">CraftyCanvas</a>
                 }
             </div>
             <div className="navbar-center hidden lg:flex">
@@ -85,13 +85,13 @@ const Navbar = () => {
                         <div className="flex items-center gap-5 md:gap-10 z-50">
                             <div className="flex gap-3 md:gap-5 z-50" data-tip={user.displayName}>
                                 <div className="dropdown dropdown-hover">
-                                    <summary tabIndex={0} role="button" className="m-1 list-none w-10 h-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                                    <summary tabIndex={0} role="button" className="m-1 list-none w-10 h-10 rounded-full ring ring-[#14a55f] ring-offset-base-100 ring-offset-2">
                                         <img className="rounded-full w-full h-full object-cover" src={user ? user.photoURL : ""} />
                                     </summary>
                                     <ul tabIndex={0} className="p-2 shadow-xl menu dropdown-content z-[1] bg-base-100 rounded-box w-36 absolute right-0 text-center gap-2 border">
                                         <li>{user.displayName}</li>
                                         <li>
-                                            <button onClick={handleLogOut} className="py-2 px-3 md:px-5 bg-[#6a60e2] text-white rounded-md">Logout</button>
+                                            <button onClick={handleLogOut} className="py-2 px-3 md:px-5 bg-[#14a55f] hover:bg-[#0fbb68] text-white rounded-md">Logout</button>
                                         </li>
                                     </ul>
                                 </div>
@@ -100,10 +100,10 @@ const Navbar = () => {
                         :
                         <>
                             <Link to="/login">
-                                <button className="py-2 px-3 md:px-5 bg-[#6a60e2] text-white rounded-md">Login</button>
+                                <button className="py-2 px-3 md:px-5 bg-[#14a55f] text-white rounded-md">Login</button>
                             </Link>
                             <Link to="/register">
-                                <button className="py-2 px-3 md:px-5 bg-[#6a60e2] text-white rounded-md">Register</button>
+                                <button className="py-2 px-3 md:px-5 bg-[#14a55f] text-white rounded-md">Register</button>
                             </Link>
                         </>
 

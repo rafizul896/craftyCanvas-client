@@ -20,7 +20,7 @@ const Home = () => {
                 <ArtAndCraftCategories></ArtAndCraftCategories>
             </div>
             <div>
-                <h1 className="text-2xl md:text-4xl text-center font-semibold py-10">News and Features</h1>
+                <h1 className="text-2xl md:text-4xl text-center font-bold py-10">News and Features</h1>
                 <div className="flex flex-col md:flex-row gap-10 justify-center">
                     <div className="flex flex-col gap-10 justify-center items-center h-[300px] lg:h-[320px] md:flex-1 bg-[linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.5)),url('https://i.imghippo.com/files/eyb4v1714362895.jpg')] bg-no-repeat bg-cover">
                         <h2 className="text-lg font-semibold text-white">Artists And Their Music</h2>
@@ -40,7 +40,7 @@ const Home = () => {
                 <ExtraSection></ExtraSection>
             </div>
             <div className="pb-10">
-                <h1 className="text-4xl text-center py-10 font-semibold">Our Partners</h1>
+                <h1 className="text-2xl md:text-4xl text-center py-10 font-bold">Our Partners</h1>
                 <div className="flex flex-col md:flex-row items-center gap-10">
                     <div className="flex-1">
                         <img className="w-[100%]" src="https://i.imghippo.com/files/lbpeU1714327299.webp" alt="" />
