@@ -2,6 +2,7 @@ import { useContext } from "react";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../providers/AuthProvider";
 import { useLoaderData } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const UpdateArtCraft = () => {
     const { user } = useContext(AuthContext);
@@ -46,6 +47,9 @@ const UpdateArtCraft = () => {
     }
     return (
         <div className="md:w-[70%] py-10 md:p-10 mx-auto my-10 bg-[#F4F3F0] rounded-md">
+            <Helmet>
+                <title>Update Page | CraftyCanvas</title>
+            </Helmet>
             <div className="text-center space-y-5">
                 <h1 className="text-4xl font-semibold text-[#314151] rancho">Update Craft Item</h1>
                 {/* <p className="raleway text-center px-2 md:px-0 lg:max-w-[70%] mx-auto">

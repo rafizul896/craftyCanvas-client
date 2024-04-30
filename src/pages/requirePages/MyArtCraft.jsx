@@ -1,6 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import MyArtCraftCart from "./MyArtCraftCart";
 import { useState } from "react";
+import { Helmet } from "react-helmet";
 
 const MyArtCraft = () => {
     const loadedmyCraftItems = useLoaderData();
@@ -21,6 +22,9 @@ const MyArtCraft = () => {
     }
     return (
         <div>
+            <Helmet>
+                <title>My Art&Craft List | CraftyCanvas</title>
+            </Helmet>
             <div className="flex justify-center items-center pb-10">
                 <details className="dropdown">
                     <summary className="m-1 p-3 rounded-lg bg-[#23BE0] border">Customization</summary>

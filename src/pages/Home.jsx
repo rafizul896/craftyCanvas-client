@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import Banner from "./Banner";
 import ArtAndCraftCategories from "./challengesPages/ArtAndCraftCategories";
 import ExtraSection from "./extra/ExtraSection";
@@ -6,6 +7,9 @@ import CraftItemsSection from "./requirePages/CraftItemsSection";
 const Home = () => {
     return (
         <div>
+            <Helmet>
+                <title>CraftyCanvas | Home</title>
+            </Helmet>
             <div>
                 <Banner></Banner>
             </div>

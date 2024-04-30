@@ -3,6 +3,7 @@ import { useLoaderData } from "react-router-dom";
 import { IoIosHeartEmpty } from "react-icons/io";
 import { BiDollar } from "react-icons/bi";
 import { TfiWrite } from "react-icons/tfi";
+import { Helmet } from "react-helmet";
 
 const CraftViewDetailsPage = () => {
     const loadedCraftItem = useLoaderData();
@@ -10,6 +11,9 @@ const CraftViewDetailsPage = () => {
 
     return (
         <div className="border flex flex-col lg:flex-row gap-10 p-2 md:p-5">
+            <Helmet>
+                <title>View Details | CraftyCanvas</title>
+            </Helmet>
             <div className="lg:flex-1 space-y-3">
                 <div className="md:h-[400px] flex justify-center">
                     <img className="h-full w-ful lg:object-cover" src={image} alt="" />

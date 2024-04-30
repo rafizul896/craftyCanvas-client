@@ -6,6 +6,7 @@ import { IoLogoGoogle } from "react-icons/io5";
 import { FaFacebookF } from "react-icons/fa";
 import { toast } from 'react-toastify';
 import { IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
+import { Helmet } from "react-helmet";
 
 const Login = () => {
     const { logIn, googleLogin, facebookLogin } = useContext(AuthContext)
@@ -51,6 +52,9 @@ const Login = () => {
 
     return (
         <div className="hero min-h-[90vh] p-5">
+            <Helmet>
+                <title>Login | CraftyCanvas</title>
+            </Helmet>
             <div className="hero-content md:w-1/2 flex-col bg-base-100 shadow border rounded-2xl borde md:p-10 px-0 py-10">
                 <div className="text-center lg:text-left">
                     <h1 className="text-4xl font-bold">Login now!</h1>

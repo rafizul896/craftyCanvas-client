@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import { Link, useLoaderData } from "react-router-dom";
 
 const AllCraftItems = () => {
@@ -5,6 +6,9 @@ const AllCraftItems = () => {
     
     return (
         <div className="overflow-x-auto py-10">
+            <Helmet>
+                <title>All Art & Craft Items | CraftyCanvas</title>
+            </Helmet>
             <table className="table table-sm">
                 <thead>
                     <tr>
