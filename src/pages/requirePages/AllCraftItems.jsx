@@ -27,7 +27,7 @@ const AllCraftItems = () => {
                             <td>{item.rating}</td>
                             <td>${item.price}</td>
                             <td>
-                                <Link to={`/allCraftItems/${item._id}`}>
+                                <Link to={`/craftDetailsPage/${item._id}`}>
                                     <button className="mt-4 px-3 py-2 border w-full rounded-full">View Details</button>
                                 </Link>
                             </td>
