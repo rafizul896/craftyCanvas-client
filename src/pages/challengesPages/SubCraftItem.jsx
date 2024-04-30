@@ -7,15 +7,15 @@ const SubCraftItem = ({ craftItem }) => {
     const { _id, item_name, subcategory_Name, processing_time, short_description, price, rating, image } = craftItem;
 
     return (
-        <div className='rounded-lg p-2 md:p-5 flex flex-col items-cente justify-cente gap-3 border border-red-600'>
+        <div className='rounded-lg p-2 md:p-5 flex flex-col items-cente justify-cente gap-3 border border-[#14a55f]'>
             <div className='h-[250px]'>
                 <img className='h-full w-full object-cover' src={image} alt="" />
             </div>
             <div className='fle justify-between'>
                 <div className='space-y-1'>
-                    <h3 className='font-semibold text-lg'>{item_name}</h3>
+                    <h3 className='font-bold text-lg'>{item_name}</h3>
                     <div className="flex items-center gap-3 font-semibold">
-                        <IoPricetagsOutline />
+                        <IoPricetagsOutline className='text-[#14a55f]'/>
                         <p>
                             {subcategory_Name}
                         </p>
@@ -41,7 +41,7 @@ const SubCraftItem = ({ craftItem }) => {
                 </div>
                 <div className="flex flex-col gap-4">
                     <Link to={`/craftDetailsPage/${_id}`}>
-                        <button className="mt-4 btn btn-secondary w-full rounded-full">View Details”</button>
+                        <button className="mt-4 btn bg-[#14a55f] hover:bg-[#14c972] text-white w-full rounded-full">View Details”</button>
                     </Link>
                 </div>
             </div>

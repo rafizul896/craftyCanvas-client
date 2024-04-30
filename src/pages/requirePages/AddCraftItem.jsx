@@ -52,7 +52,7 @@ const AddCraftItem = () => {
             </Helmet>
             <div className="text-center space-y-5">
                 <h1 className="text-4xl text-black rancho">Add Craft Item</h1>
-                <p className="raleway text-center px-2 md:px-0 lg:max-w-[70%] mx-auto">
+                <p className="raleway text-black text-center px-2 md:px-0 lg:max-w-[70%] mx-auto">
                 Add Craft Item is your online destination for unique and handcrafted treasures. Browse our curated selection of artisanal creations, from exquisite paintings to intricate drawings. Discover the perfect piece to adorn your space or gift to a loved one. With Add Craft Item, bring a touch of creativity and charm into your life.
                 </p>
                 {/* Form */}
@@ -172,7 +172,7 @@ const AddCraftItem = () => {
                                 </label>
                             </div>
                         </div>
-                        <button className="btn btn-block mt-6 bg-[#14a55f] text-white rancho text-2xl hover:bg-[#0fbb68]">Add</button>
+                        <button className="btn btn-block border-0 mt-6 bg-[#14a55f] text-white rancho text-2xl hover:bg-[#0fbb68]">Add</button>
                     </div>
                 </form>
             </div>
