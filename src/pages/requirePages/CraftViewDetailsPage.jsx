@@ -61,8 +61,8 @@ const CraftViewDetailsPage = () => {
                     {rating} <span>rating</span>
                 </div>
                 <div className="flex flex-col gap-3">
-                    <button className="btn bg-[#14a55f] hover:bg-[#0fbb68] rounded-full w-full">Add to Cart</button>
-                    <button className="btn hover:bg-[#14a55f] text-white border border-[#14a55f] bg-white rounded-full w-full"> <span className="text-xl"><IoIosHeartEmpty /></span> Add to my favorites</button>
+                    <button className="btn bg-[#14a55f] hover:bg-[#0fbb68] rounded-full w-full text-white">Add to Cart</button>
+                    <button className="btn hover:bg-[#14a55f] text-black hover:text-white border border-[#14a55f] bg-white rounded-full w-full"> <span className="text-xl"><IoIosHeartEmpty /></span> Add to my favorites</button>
                 </div>
                 
             </div>
